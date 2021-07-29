@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  address: 0.0.0.0
+push:
+  app:
+    url: http://sdk.open.api.igexin.com/apiex.htm
+    id: 个推AppID
+    secret: 个推AppSecret
+    key: 个推AppKey
+    masterSecret: 个推MasterSecret
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_im?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: '000'
+
+  redis:
+    host: 106.15.189.89
+    port: 26379
+    password: cjdnPL1u
+    timeout: 3000
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 10000
+        min-idle: 0
+        max-idle: 8
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        show_sql: true
